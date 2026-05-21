@@ -191,184 +191,106 @@
             border-radius: 2px;
         }
 
-        /* Projects Grid */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
+        /* Projects Section */
+        .projects-container {
+            display: flex;
+            flex-direction: column;
+            gap: 80px;
             margin-top: 40px;
         }
 
-        .project-card {
+        .project-item {
             background: var(--bg-white);
             border-radius: 12px;
             overflow: hidden;
-            border: none;
-            transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-            display: flex;
-            flex-direction: column;
-            height: 100%;
+            transition: all 0.3s ease;
         }
 
-        .project-card:hover {
-            transform: translateY(-12px);
-            box-shadow: 0 20px 40px rgba(0, 102, 204, 0.15);
+        .project-item:hover {
+            box-shadow: 0 12px 30px rgba(0, 102, 204, 0.15);
         }
 
-        /* Carousel Container - Redesigned */
-        .carousel-container {
-            position: relative;
-            width: 100%;
-            height: 300px;
-            background: linear-gradient(135deg, #1a3a52 0%, var(--primary) 100%);
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
+        .project-header {
+            padding: 40px;
+            background: linear-gradient(135deg, rgba(0, 102, 204, 0.05), rgba(255, 107, 53, 0.05));
+            border-bottom: 2px solid var(--border);
         }
 
-        .carousel-slides {
-            position: relative;
-            width: 100%;
-            height: 100%;
-        }
-
-        .carousel-slide {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            transition: opacity 0.6s ease-in-out;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .carousel-slide.active {
-            opacity: 1;
-            z-index: 5;
-        }
-
-        .carousel-slide img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        /* Navigation Controls */
-        .carousel-nav {
-            position: absolute;
-            top: 50%;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            padding: 0 15px;
-            box-sizing: border-box;
-            transform: translateY(-50%);
-            z-index: 20;
-            pointer-events: none;
-        }
-
-        .carousel-btn {
-            background: rgba(255, 255, 255, 0.9);
-            color: var(--primary);
-            border: none;
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 18px;
-            transition: all 0.3s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            pointer-events: all;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .carousel-btn:hover {
-            background: white;
-            transform: scale(1.1);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-        }
-
-        .carousel-dots {
-            position: absolute;
-            bottom: 15px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 8px;
-            z-index: 15;
-        }
-
-        .dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.6);
-            cursor: pointer;
-            transition: all 0.3s;
-            border: none;
-            padding: 0;
-        }
-
-        .dot.active {
-            background: white;
-            transform: scale(1.3);
-            width: 12px;
-            height: 12px;
-        }
-
-        .dot:hover {
-            background: rgba(255, 255, 255, 0.9);
-        }
-
-        .carousel-counter {
-            position: absolute;
-            top: 12px;
-            right: 12px;
-            background: rgba(0, 0, 0, 0.5);
-            color: white;
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
-            z-index: 15;
-            backdrop-filter: blur(4px);
-        }
-
-        .project-content {
-            padding: 30px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            background: var(--bg-white);
-        }
-
-        .project-content h3 {
-            font-size: 24px;
-            margin-bottom: 12px;
+        .project-header h3 {
+            font-size: 28px;
             color: var(--text-dark);
+            margin-bottom: 15px;
             font-weight: 700;
         }
 
-        .project-content p {
+        .project-description {
             color: var(--text-light);
+            font-size: 16px;
             margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .project-overview {
+            background: #f5f7fa;
+            padding: 20px;
+            border-left: 4px solid var(--primary);
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+
+        .project-overview h4 {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .project-overview p {
+            font-size: 15px;
+            color: var(--text-dark);
             line-height: 1.7;
-            flex-grow: 1;
+        }
+
+        .project-achievements {
+            margin-top: 20px;
+        }
+
+        .project-achievements h4 {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .achievements-list {
+            list-style: none;
+        }
+
+        .achievements-list li {
+            padding: 8px 0 8px 25px;
+            position: relative;
+            color: var(--text-light);
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .achievements-list li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 16px;
         }
 
         .tech-tags {
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
-            margin-top: auto;
+            margin-top: 15px;
         }
 
         .tech-tag {
@@ -384,6 +306,78 @@
         .tech-tag:hover {
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
+        }
+
+        /* Gallery Section */
+        .project-gallery {
+            padding: 40px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .gallery-item {
+            background: var(--bg-light);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+        }
+
+        .gallery-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-image img {
+            transform: scale(1.05);
+        }
+
+        .gallery-caption {
+            padding: 20px;
+        }
+
+        .gallery-caption h5 {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+        }
+
+        .gallery-caption p {
+            font-size: 14px;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .learning-badge {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+            margin-top: 10px;
+            text-transform: uppercase;
         }
 
         /* Skills Section */
@@ -505,27 +499,20 @@
                 font-size: 28px;
             }
 
-            .projects-grid {
+            .project-header {
+                padding: 30px 20px;
+            }
+
+            .project-header h3 {
+                font-size: 24px;
+            }
+
+            .gallery-grid {
                 grid-template-columns: 1fr;
-                gap: 30px;
             }
 
-            .carousel-container {
-                height: 250px;
-            }
-
-            .carousel-btn {
-                width: 40px;
-                height: 40px;
-                font-size: 16px;
-            }
-
-            .project-content {
-                padding: 25px;
-            }
-
-            .project-content h3 {
-                font-size: 20px;
+            .projects-container {
+                gap: 60px;
             }
         }
     </style>
@@ -562,133 +549,277 @@
     <!-- Projects Section -->
     <section class="container" id="projects">
         <h2>Featured Projects</h2>
-        <div class="projects-grid">
-            <!-- Project 1 -->
-            <div class="project-card">
-                <div class="carousel-container" id="carousel-0">
-                    <div class="carousel-slides">
-                        <div class="carousel-slide active">
-                            <img src="final_ROV_Image.jpg" alt="Final ROV">
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="finalROV_electronics_tray.jpg" alt="ROV Electronics">
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="3dprintedROVthrustermounts.png" alt="3D Printed Thruster Mounts">
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="Cad assemblyROV.png" alt="CAD Assembly">
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="Ardusub_connectionDiagram.png" alt="ArduSub Connection Diagram">
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="Rover_piloting.png" alt="Rover Piloting">
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="pressurevesselFEA.png" alt="Pressure Vessel FEA">
-                        </div>
-                    </div>
-                    <div class="carousel-nav">
-                        <button class="carousel-btn" onclick="prevSlide(0)"><i class="fas fa-chevron-left"></i></button>
-                        <button class="carousel-btn" onclick="nextSlide(0)"><i class="fas fa-chevron-right"></i></button>
-                    </div>
-                    <div class="carousel-dots" id="dots-0"></div>
-                    <div class="carousel-counter" id="counter-0">1/7</div>
-                </div>
-                <div class="project-content">
+        <div class="projects-container">
+            
+            <!-- Project 1: Sellafield ROV -->
+            <div class="project-item">
+                <div class="project-header">
                     <h3>Sellafield Subsea ROV</h3>
-                    <p>Designed and built a remotely operated vehicle for nuclear decommissioning, operating in highly challenging underwater environments.</p>
+                    <p class="project-description">As part of a multidisciplinary engineering team, I contributed to the design, build and testing of a subsea Remotely Operated Vehicle (ROV) intended to operate within Sellafield's radioactive legacy storage ponds—the most challenging and hazardous environments within the UK's highly regulated nuclear industry. The project's objective was to develop a vehicle capable of navigating confined underwater environments to characterise, collect and sample radioactive waste, supporting Sellafield's ongoing decommissioning efforts.</p>
+                    
+                    <div class="project-overview">
+                        <h4>Key Responsibilities</h4>
+                        <p>CAD design & modelling | Hydrodynamic analysis | Structural validation | Instrumentation integration | Electronics assembly</p>
+                    </div>
+
+                    <div class="project-achievements">
+                        <h4>Key Achievements</h4>
+                        <ul class="achievements-list">
+                            <li>Produced detailed CAD models of the ROV structure and components, translating conceptual designs into manufacturable parts</li>
+                            <li>Performed Computational Fluid Dynamics (CFD) to analyse hydrodynamic performance, computing drag force, flow patterns, sediment disturbance and thrust requirements to optimise design and manoeuvrability</li>
+                            <li>Conducted Finite Element Analysis (FEA) to validate the structural integrity of key components under operational loading conditions, ensuring a reliable design that meets safety standards within a highly regulated environment</li>
+                            <li>Led the instrumentation and camera system integration which relays live feedback to the operator aiding efficiency and post mission analysis</li>
+                        </ul>
+                    </div>
+
                     <div class="tech-tags">
-                        <span class="tech-tag">CAD</span>
-                        <span class="tech-tag">FEA</span>
-                        <span class="tech-tag">CFD</span>
+                        <span class="tech-tag">PTC Creo CAD</span>
+                        <span class="tech-tag">ANSYS FEA</span>
+                        <span class="tech-tag">CFD Analysis</span>
                         <span class="tech-tag">Robotics</span>
-                        <span class="tech-tag">Arduino</span>
+                        <span class="tech-tag">Arduino C++</span>
+                        <span class="tech-tag">Pressure Vessel Design</span>
+                    </div>
+                </div>
+
+                <div class="project-gallery">
+                    <h4 style="font-size: 16px; font-weight: 700; color: var(--text-dark); margin-bottom: 20px;">Project Gallery & Learnings</h4>
+                    <div class="gallery-grid">
+                        <div class="gallery-item">
+                            <div class="gallery-image">
+                                <img src="final_ROV_Image.jpg" alt="Final ROV Assembly">
+                            </div>
+                            <div class="gallery-caption">
+                                <h5>Final ROV Assembly</h5>
+                                <p>Complete subsea vehicle integrated and ready for testing</p>
+                                <span class="learning-badge">Integration Expertise</span>
+                            </div>
+                        </div>
+
+                        <div class="gallery-item">
+                            <div class="gallery-image">
+                                <img src="finalROV_electronics_tray.jpg" alt="Electronics Tray">
+                            </div>
+                            <div class="gallery-caption">
+                                <h5>Electronics & Control Systems</h5>
+                                <p>Custom-built control circuit integrating thrusters and sensors for autonomous operation</p>
+                                <span class="learning-badge">Electronics Design</span>
+                            </div>
+                        </div>
+
+                        <div class="gallery-item">
+                            <div class="gallery-image">
+                                <img src="3dprintedROVthrustermounts.png" alt="3D Printed Components">
+                            </div>
+                            <div class="gallery-caption">
+                                <h5>3D Printed Thruster Mounts</h5>
+                                <p>Optimised FDM-printed brackets reducing weight while maintaining structural rigidity</p>
+                                <span class="learning-badge">Additive Manufacturing</span>
+                            </div>
+                        </div>
+
+                        <div class="gallery-item">
+                            <div class="gallery-image">
+                                <img src="Cad assemblyROV.png" alt="CAD Assembly">
+                            </div>
+                            <div class="gallery-caption">
+                                <h5>CAD Assembly Model</h5>
+                                <p>Complete 3D model showing all subsystems and dimensional accuracy requirements</p>
+                                <span class="learning-badge">CAD Mastery</span>
+                            </div>
+                        </div>
+
+                        <div class="gallery-item">
+                            <div class="gallery-image">
+                                <img src="Ardusub_connectionDiagram.png" alt="Control Architecture">
+                            </div>
+                            <div class="gallery-caption">
+                                <h5>ArduSub Control Architecture</h5>
+                                <p>Electrical schematic and microcontroller configuration for autonomous navigation and data logging</p>
+                                <span class="learning-badge">Control Systems</span>
+                            </div>
+                        </div>
+
+                        <div class="gallery-item">
+                            <div class="gallery-image">
+                                <img src="Rover_piloting.png" alt="System Testing">
+                            </div>
+                            <div class="gallery-caption">
+                                <h5>Live Piloting & Testing</h5>
+                                <p>Real-time operator interface demonstrating successful vehicle maneuverability in test environment</p>
+                                <span class="learning-badge">Systems Testing</span>
+                            </div>
+                        </div>
+
+                        <div class="gallery-item">
+                            <div class="gallery-image">
+                                <img src="pressurevesselFEA.png" alt="Pressure Vessel FEA">
+                            </div>
+                            <div class="gallery-caption">
+                                <h5>Pressure Vessel Analysis</h5>
+                                <p>FEA validation showing stress distribution at depth, ensuring electronics enclosure integrity</p>
+                                <span class="learning-badge">FEA Analysis</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Project 2 -->
-            <div class="project-card">
-                <div class="carousel-container" id="carousel-1">
-                    <div class="carousel-slides">
-                        <div class="carousel-slide active">
-                            <img src="flexible perovskite cell.jpg" alt="Flexible Perovskite Cell">
-                        </div>
-                    </div>
-                    <div class="carousel-nav">
-                        <button class="carousel-btn" onclick="prevSlide(1)" style="visibility: hidden;"><i class="fas fa-chevron-left"></i></button>
-                        <button class="carousel-btn" onclick="nextSlide(1)" style="visibility: hidden;"><i class="fas fa-chevron-right"></i></button>
-                    </div>
-                    <div class="carousel-dots" id="dots-1"></div>
-                    <div class="carousel-counter" id="counter-1">1/1</div>
-                </div>
-                <div class="project-content">
+            <!-- Project 2: Perovskite Solar Cells -->
+            <div class="project-item">
+                <div class="project-header">
                     <h3>Flexible Perovskite Solar Cells</h3>
-                    <p>Investigated encapsulation materials for next-generation solar cells, achieving 13.1% power conversion efficiency with silicone spray.</p>
+                    <p class="project-description">This project investigated the compatibility of commercially available poly(methyl methacrylate) (PMMA) and silicone spray as encapsulant materials for flexible perovskite solar cells. Encapsulation is a critical stage in the development of perovskite solar cells, as these devices are highly sensitive to moisture and mechanical stress, both of which can significantly degrade electrical performance over time.</p>
+                    
+                    <div class="project-overview">
+                        <h4>Key Responsibilities</h4>
+                        <p>Material testing | Electrical characterisation | Microstructural analysis | Data analysis & visualisation | Technical documentation</p>
+                    </div>
+
+                    <div class="project-achievements">
+                        <h4>Key Achievements</h4>
+                        <ul class="achievements-list">
+                            <li>Applied manual spray encapsulation techniques and assessed their effectiveness against mechanical fatigue through electrical performance analysis and microstructural evaluation, developing strong analytical and problem-solving skills</li>
+                            <li>Utilised Ossila Solar Cell software to measure and calculate power conversion efficiency (PCE) alongside other metrics with a single coat of silicone encapsulant achieving a PCE of 13.10% and an average fill factor of 54.05%</li>
+                            <li>Demonstrated that three coats of silicone spray encapsulation significantly improved device stability, with an encapsulated cell retaining 93% of its initial PCE over 504 hours (21 days) compared to an 88% efficiency loss in an unencapsulated control cell</li>
+                            <li>Managed PCE data in Excel, outputting results using MATLAB to produce clear visual representations of electrical performance metrics, aiding the interpretation of results and supporting future research</li>
+                        </ul>
+                    </div>
+
                     <div class="tech-tags">
-                        <span class="tech-tag">Materials</span>
+                        <span class="tech-tag">Materials Science</span>
                         <span class="tech-tag">MATLAB</span>
-                        <span class="tech-tag">Excel</span>
-                        <span class="tech-tag">Lab Work</span>
+                        <span class="tech-tag">Excel Data Analysis</span>
+                        <span class="tech-tag">Laboratory Work</span>
+                        <span class="tech-tag">Electrical Testing</span>
+                        <span class="tech-tag">Technical Writing</span>
+                    </div>
+                </div>
+
+                <div class="project-gallery">
+                    <h4 style="font-size: 16px; font-weight: 700; color: var(--text-dark); margin-bottom: 20px;">Project Gallery & Learnings</h4>
+                    <div class="gallery-grid">
+                        <div class="gallery-item">
+                            <div class="gallery-image">
+                                <img src="flexible perovskite cell.jpg" alt="Perovskite Cell Sample">
+                            </div>
+                            <div class="gallery-caption">
+                                <h5>Perovskite Cell Sample</h5>
+                                <p>Flexible photovoltaic device showing encapsulated perovskite absorber layer and transparent electrode</p>
+                                <span class="learning-badge">Material Science</span>
+                            </div>
+                        </div>
+
+                        <div class="gallery-item">
+                            <div class="gallery-image">
+                                <img src="automatedperovskitespraydevoice.jpeg" alt="Spray Encapsulation Device">
+                            </div>
+                            <div class="gallery-caption">
+                                <h5>Spray Encapsulation Process</h5>
+                                <p>Automated system applying uniform silicone coating to achieve consistent electrical performance and improved stability</p>
+                                <span class="learning-badge">Process Optimisation</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Project 3 -->
-            <div class="project-card">
-                <div class="carousel-container" id="carousel-2">
-                    <div class="carousel-slides">
-                        <div class="carousel-slide active">
-                            <img src="automatedperovskitespraydevoice.jpeg" alt="Spray System">
-                        </div>
+            <!-- Project 3: Automated Spray System -->
+            <div class="project-item">
+                <div class="project-header">
+                    <h3>Automated Spray Encapsulation System</h3>
+                    <p class="project-description">This project involves the design and development of a CNC automated spray encapsulation system, integrating an airbrush with a computer-controlled linear stage powered by stepper motors to enable precise and repeatable encapsulant deposition on photovoltaic cells. The system represents a significant advancement from manual spray techniques, allowing for controlled parameters and systematic optimisation.</p>
+                    
+                    <div class="project-overview">
+                        <h4>Key Responsibilities</h4>
+                        <p>Mechanical design (CAD) | G-code programming | Arduino microcontroller development | Parameter optimisation | Hardware integration</p>
                     </div>
-                    <div class="carousel-nav">
-                        <button class="carousel-btn" onclick="prevSlide(2)" style="visibility: hidden;"><i class="fas fa-chevron-left"></i></button>
-                        <button class="carousel-btn" onclick="nextSlide(2)" style="visibility: hidden;"><i class="fas fa-chevron-right"></i></button>
+
+                    <div class="project-achievements">
+                        <h4>Key Achievements</h4>
+                        <ul class="achievements-list">
+                            <li>Utilised Creo CAD software to design a detailed Cartesian frame guiding fabrication decisions and ensuring dimensional accuracy across all fabricated components</li>
+                            <li>Developed and implemented G-code programming to control servo motors which power the linear stage, enabling accurate and reliable positioning of the airbrush during the encapsulation process</li>
+                            <li>Programmed an Arduino microcontroller using C++ to control the actuation of a solenoid valve, regulating nitrogen flow to the airbrush with precise timing control</li>
+                            <li>Currently optimising spraying parameters including flow rate, nozzle distance and transverse nozzle speed to determine the optimal deposition parameters for producing high quality, uniform encapsulation layers. This demonstrates a systematic and analytical approach to control system design transferable to decommissioning projects</li>
+                        </ul>
                     </div>
-                    <div class="carousel-dots" id="dots-2"></div>
-                    <div class="carousel-counter" id="counter-2">1/1</div>
-                </div>
-                <div class="project-content">
-                    <h3>Automated Spray System</h3>
-                    <p>Developed a CNC automated spray encapsulation system with precision stepper motor control and G-code programming.</p>
+
                     <div class="tech-tags">
-                        <span class="tech-tag">CNC</span>
-                        <span class="tech-tag">G-Code</span>
-                        <span class="tech-tag">Arduino</span>
-                        <span class="tech-tag">CAD</span>
+                        <span class="tech-tag">PTC Creo CAD</span>
+                        <span class="tech-tag">G-Code Programming</span>
+                        <span class="tech-tag">Arduino C++</span>
+                        <span class="tech-tag">CNC Control</span>
+                        <span class="tech-tag">Stepper Motors</span>
+                        <span class="tech-tag">Process Optimisation</span>
+                    </div>
+                </div>
+
+                <div class="project-gallery">
+                    <h4 style="font-size: 16px; font-weight: 700; color: var(--text-dark); margin-bottom: 20px;">Project Gallery & Learnings</h4>
+                    <div class="gallery-grid">
+                        <div class="gallery-item">
+                            <div class="gallery-image">
+                                <img src="automatedperovskitespraydevoice.jpeg" alt="Complete Spray System">
+                            </div>
+                            <div class="gallery-caption">
+                                <h5>Complete CNC Spray System</h5>
+                                <p>Integrated linear stage with airbrush and solenoid valve for automated encapsulation</p>
+                                <span class="learning-badge">Systems Integration</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Project 4 -->
-            <div class="project-card">
-                <div class="carousel-container" id="carousel-3">
-                    <div class="carousel-slides">
-                        <div class="carousel-slide active">
-                            <img src="CFD aerofoil.png" alt="CFD Aerofoil">
-                        </div>
+            <!-- Project 4: NACA CFD -->
+            <div class="project-item">
+                <div class="project-header">
+                    <h3>NACA 7316 Aerofoil CFD Simulation</h3>
+                    <p class="project-description">This project involved the computational fluid dynamics (CFD) simulation of turbulent subsonic flow over a NACA 7316 aerofoil using SU2, an open-source high-fidelity simulation platform. A Reynolds-averaged Navier-Stokes (RANS) solver was employed alongside the SST turbulence model to capture both near-wall and far-field turbulent flow behaviour across a range of angles of attack, with results validated against XFOIL reference data.</p>
+                    
+                    <div class="project-overview">
+                        <h4>Key Responsibilities</h4>
+                        <p>CAD geometry creation | Mesh generation & refinement | Solver configuration | Simulation execution | Post-processing & visualisation | Technical documentation</p>
                     </div>
-                    <div class="carousel-nav">
-                        <button class="carousel-btn" onclick="prevSlide(3)" style="visibility: hidden;"><i class="fas fa-chevron-left"></i></button>
-                        <button class="carousel-btn" onclick="nextSlide(3)" style="visibility: hidden;"><i class="fas fa-chevron-right"></i></button>
+
+                    <div class="project-achievements">
+                        <h4>Key Achievements</h4>
+                        <ul class="achievements-list">
+                            <li>Configured and executed a RANS-based CFD simulation in SU2 using the SST turbulence model and JST spatial discretisation scheme, demonstrating practical experience in simulation setup and numerical methods directly applicable to engineering assessment roles</li>
+                            <li>Validated lift coefficient (Cl) results against XFOIL software reference data across multiple angles of attack, achieving strong agreement with a simulated Cl of 1.21 compared to 1.28 at α = 4.07°, with findings formally written up demonstrating strong technical documentation and reporting skills</li>
+                            <li>Produced Mach number and pressure distribution contour plots using Paraview software, enabling the interpretation and communication of flow behaviour, demonstrating proficiency in CFD post-processing and results visualisation</li>
+                            <li>Applied a systematic approach throughout the simulation workflow, from the initial solver configuration through to results and validation, reflecting the rigorous methodology required in professional engineering assessment and numerical simulation work</li>
+                        </ul>
                     </div>
-                    <div class="carousel-dots" id="dots-3"></div>
-                    <div class="carousel-counter" id="counter-3">1/1</div>
-                </div>
-                <div class="project-content">
-                    <h3>NACA 7316 Aerofoil CFD</h3>
-                    <p>Comprehensive CFD simulation of turbulent subsonic flow over an aerofoil using SU2 with RANS solver and mesh generation.</p>
+
                     <div class="tech-tags">
-                        <span class="tech-tag">CFD</span>
-                        <span class="tech-tag">SU2</span>
-                        <span class="tech-tag">ANSYS</span>
+                        <span class="tech-tag">SU2 CFD</span>
+                        <span class="tech-tag">RANS Solver</span>
+                        <span class="tech-tag">Mesh Generation</span>
                         <span class="tech-tag">Paraview</span>
+                        <span class="tech-tag">Numerical Methods</span>
+                        <span class="tech-tag">Technical Writing</span>
+                    </div>
+                </div>
+
+                <div class="project-gallery">
+                    <h4 style="font-size: 16px; font-weight: 700; color: var(--text-dark); margin-bottom: 20px;">Project Gallery & Learnings</h4>
+                    <div class="gallery-grid">
+                        <div class="gallery-item">
+                            <div class="gallery-image">
+                                <img src="CFD aerofoil.png" alt="CFD Simulation Results">
+                            </div>
+                            <div class="gallery-caption">
+                                <h5>Pressure Distribution & Flow Visualization</h5>
+                                <p>Contour plot showing pressure field and Mach number distribution around NACA aerofoil at α=4.07°, validated against XFOIL data</p>
+                                <span class="learning-badge">CFD Post-Processing</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
 
@@ -791,76 +922,6 @@
     </footer>
 
     <script>
-        // Carousel functionality
-        const carousels = {};
-
-        function initCarousels() {
-            const carouselContainers = document.querySelectorAll('[id^="carousel-"]');
-            
-            carouselContainers.forEach(container => {
-                const index = container.id.split('-')[1];
-                const slides = container.querySelectorAll('.carousel-slide');
-                const dotsContainer = document.getElementById(`dots-${index}`);
-                
-                carousels[index] = {
-                    currentSlide: 0,
-                    totalSlides: slides.length,
-                    container: container
-                };
-
-                // Create dots
-                for (let i = 0; i < slides.length; i++) {
-                    const dot = document.createElement('button');
-                    dot.className = `dot ${i === 0 ? 'active' : ''}`;
-                    dot.onclick = () => goToSlide(index, i);
-                    dotsContainer.appendChild(dot);
-                }
-            });
-        }
-
-        function updateCarousel(index) {
-            const carousel = carousels[index];
-            const slides = carousel.container.querySelectorAll('.carousel-slide');
-            const dots = carousel.container.querySelectorAll('.dot');
-            const counter = document.getElementById(`counter-${index}`);
-
-            slides.forEach((slide, i) => {
-                slide.classList.toggle('active', i === carousel.currentSlide);
-            });
-
-            dots.forEach((dot, i) => {
-                dot.classList.toggle('active', i === carousel.currentSlide);
-            });
-
-            if (counter) {
-                counter.textContent = `${carousel.currentSlide + 1}/${carousel.totalSlides}`;
-            }
-        }
-
-        function nextSlide(index) {
-            const carousel = carousels[index];
-            if (carousel.totalSlides > 1) {
-                carousel.currentSlide = (carousel.currentSlide + 1) % carousel.totalSlides;
-                updateCarousel(index);
-            }
-        }
-
-        function prevSlide(index) {
-            const carousel = carousels[index];
-            if (carousel.totalSlides > 1) {
-                carousel.currentSlide = (carousel.currentSlide - 1 + carousel.totalSlides) % carousel.totalSlides;
-                updateCarousel(index);
-            }
-        }
-
-        function goToSlide(index, slideIndex) {
-            carousels[index].currentSlide = slideIndex;
-            updateCarousel(index);
-        }
-
-        // Initialize on load
-        document.addEventListener('DOMContentLoaded', initCarousels);
-
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
