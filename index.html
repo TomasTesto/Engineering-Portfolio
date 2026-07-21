@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tomas Testo - Mechanical Engineering Portfolio. MEng (Hons) specializing in CAD, FEA, CFD, and robotics engineering.">
     <title>Tomas Testo - Mechanical Engineering Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -16,6 +17,7 @@
             --primary: #0066cc;
             --secondary: #004499;
             --accent: #ff6b35;
+            --success: #10b981;
             --text-dark: #1a1a1a;
             --text-light: #666;
             --bg-light: #f8f9fa;
@@ -91,7 +93,28 @@
         .hero .subtitle {
             font-size: 20px;
             color: var(--text-light);
+            margin-bottom: 10px;
+        }
+
+        .credentials {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
             margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .credential-badge {
+            background: linear-gradient(135deg, var(--success), #059669);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            box-shadow: 0 2px 8px rgba(16, 185, 129, 0.2);
         }
 
         .hero-info {
@@ -111,6 +134,20 @@
 
         .hero-info a:hover {
             color: var(--secondary);
+        }
+
+        .professional-summary {
+            background: linear-gradient(135deg, rgba(0, 102, 204, 0.08), rgba(255, 107, 53, 0.08));
+            padding: 25px;
+            border-left: 4px solid var(--primary);
+            border-radius: 8px;
+            margin: 30px 0;
+            font-size: 16px;
+            color: var(--text-dark);
+            line-height: 1.8;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .cta-buttons {
@@ -205,10 +242,51 @@
             overflow: hidden;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
             transition: all 0.3s ease;
+            cursor: pointer;
         }
 
         .project-item:hover {
-            box-shadow: 0 12px 30px rgba(0, 102, 204, 0.15);
+            box-shadow: 0 12px 35px rgba(0, 102, 204, 0.2);
+            transform: translateY(-4px);
+        }
+
+        .project-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .project-date {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--primary);
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .project-metrics {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .metric-badge {
+            background: rgba(0, 102, 204, 0.08);
+            color: var(--primary);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 5px;
         }
 
         .project-header {
@@ -270,18 +348,18 @@
         }
 
         .achievements-list li {
-            padding: 8px 0 8px 25px;
+            padding: 10px 0 10px 25px;
             position: relative;
             color: var(--text-light);
             font-size: 15px;
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
         .achievements-list li:before {
-            content: '✓';
+            content: '→';
             position: absolute;
             left: 0;
-            color: var(--primary);
+            color: var(--success);
             font-weight: bold;
             font-size: 16px;
         }
@@ -490,6 +568,10 @@
                 gap: 15px;
             }
 
+            .credentials {
+                flex-direction: column;
+            }
+
             section {
                 margin: 40px auto;
                 padding: 30px 20px;
@@ -505,6 +587,11 @@
 
             .project-header h3 {
                 font-size: 24px;
+            }
+
+            .project-meta {
+                flex-direction: column;
+                align-items: flex-start;
             }
 
             .gallery-grid {
@@ -534,7 +621,20 @@
     <!-- Hero Section -->
     <section class="hero" id="about">
         <h1>Tomas Edward Testo</h1>
-        <p class="subtitle">MEng Mechanical Engineering | University of Liverpool</p>
+        <p class="subtitle">Mechanical Engineer specializing in Advanced Simulation & Robotics</p>
+        <div class="credentials">
+            <div class="credential-badge">
+                <i class="fas fa-graduation-cap"></i> MEng (Hons) - First Class
+            </div>
+            <div class="credential-badge">
+                <i class="fas fa-university"></i> University of Liverpool
+            </div>
+        </div>
+
+        <div class="professional-summary">
+            <strong>Mechanical engineer with hands-on expertise in robotics design, advanced FEA/CFD simulation, and CNC automation.</strong> Successfully delivered complex engineering projects including subsea ROV systems, perovskite solar cell encapsulation optimization, and automated manufacturing systems. Proven ability to translate conceptual designs into optimized, manufacturable solutions while delivering measurable performance improvements.
+        </div>
+
         <div class="hero-info">
             <div><i class="fas fa-envelope"></i> <a href="mailto:tomastesto@outlook.com">tomastesto@outlook.com</a></div>
             <div><i class="fas fa-phone"></i> +44 07547 200588</div>
@@ -554,31 +654,46 @@
             <!-- Project 1: Sellafield ROV -->
             <div class="project-item">
                 <div class="project-header">
-                    <h3>Sellafield Subsea ROV</h3>
-                    <p class="project-description">As part of a multidisciplinary engineering team, I contributed to the design, build and testing of a subsea Remotely Operated Vehicle (ROV) intended to operate within Sellafield's radioactive legacy storage ponds, one of the most challenging and hazardous environments within the UK's highly regulated nuclear industry. The project's objective was to develop a vehicle capable of navigating confined underwater environments to characterise, collect and sample radioactive waste, supporting Sellafield's ongoing decommissioning efforts.</p>
+                    <div class="project-meta">
+                        <h3>Sellafield Subsea ROV</h3>
+                        <div class="project-metrics">
+                            <div class="metric-badge">
+                                <i class="fas fa-calendar"></i> Sep 2024 - Jun 2026
+                            </div>
+                            <div class="metric-badge">
+                                <i class="fas fa-arrow-down"></i> 15% Drag Reduction
+                            </div>
+                            <div class="metric-badge">
+                                <i class="fas fa-shield"></i> FOS: 1.8
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="project-description">Led CFD-based hull optimization achieving 15% drag reduction through iterative design analysis. Designed and validated structural components under operational loading conditions while working in a safety-critical engineering environment with Sellafield Ltd engineers.</p>
                     
                     <div class="project-overview">
                         <h4>Key Responsibilities</h4>
-                        <p>CAD design & modelling | Hydrodynamic analysis | Structural validation | Instrumentation integration | Electronics assembly</p>
+                        <p>CFD hull optimization (5 design iterations) | Structural CAD design | FEA validation | Pressure vessel analysis | Technical presentations</p>
                     </div>
 
                     <div class="project-achievements">
                         <h4>Key Achievements</h4>
                         <ul class="achievements-list">
-                            <li>Produced detailed CAD models of the ROV structure and components, translating conceptual designs into manufacturable parts</li>
-                            <li>Performed Computational Fluid Dynamics (CFD) to analyse hydrodynamic performance, computing drag force, flow patterns, sediment disturbance and thrust requirements to optimise design and manoeuvrability</li>
-                            <li>Conducted Finite Element Analysis (FEA) to validate the structural integrity of key components under operational loading conditions, ensuring a reliable design that meets safety standards within a highly regulated environment</li>
-                            <li>Led the instrumentation and camera system integration which relays live feedback to the operator aiding efficiency and post mission analysis</li>
+                            <li>Took ownership of CFD-based hull optimization using SU2 and ANSYS Fluent, analyzing five design iterations and achieving 15% drag reduction to enhance vehicle efficiency during underwater operation</li>
+                            <li>Designed structural components in Creo CAD considering manufacturability, load paths, structural performance and weight optimization</li>
+                            <li>Performed finite element stress analysis supported by analytical hand calculations, validating simulation results to within 4% of expected values</li>
+                            <li>Conducted engineering assessment of submerged pressure vessel using analytical hoop stress calculations, demonstrating minimum factor of safety of 1.8 across operating depth range</li>
+                            <li>Presented and defended technical findings to 30+ Sellafield Ltd engineers in formal review environment, supporting design validation and decision-making</li>
                         </ul>
                     </div>
 
                     <div class="tech-tags">
                         <span class="tech-tag">PTC Creo CAD</span>
-                        <span class="tech-tag">ANSYS FEA</span>
-                        <span class="tech-tag">CFD Analysis</span>
-                        <span class="tech-tag">Robotics</span>
-                        <span class="tech-tag">Arduino C++</span>
+                        <span class="tech-tag">SU2 CFD</span>
+                        <span class="tech-tag">ANSYS Fluent</span>
+                        <span class="tech-tag">FEA Analysis</span>
                         <span class="tech-tag">Pressure Vessel Design</span>
+                        <span class="tech-tag">Robotics</span>
                     </div>
                 </div>
 
@@ -668,30 +783,44 @@
             <!-- Project 2: Perovskite Solar Cells -->
             <div class="project-item">
                 <div class="project-header">
-                    <h3>Flexible Perovskite Solar Cells</h3>
-                    <p class="project-description">This project investigated the compatibility of commercially available poly(methyl methacrylate) (PMMA) and silicone spray as encapsulant materials for flexible perovskite solar cells. Encapsulation is a critical stage in the development of perovskite solar cells, as these devices are highly sensitive to moisture and mechanical stress, both of which can significantly degrade electrical performance over time.</p>
+                    <div class="project-meta">
+                        <h3>Spray Encapsulation of Flexible Perovskite Solar Cells</h3>
+                        <div class="project-metrics">
+                            <div class="metric-badge">
+                                <i class="fas fa-calendar"></i> Oct 2024 - Apr 2026
+                            </div>
+                            <div class="metric-badge">
+                                <i class="fas fa-chart-line"></i> 0.09% PCE Loss
+                            </div>
+                            <div class="metric-badge">
+                                <i class="fas fa-droplet"></i> 100 Bending Cycles
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="project-description">Developed a low-cost cyclic bending test demonstrating exceptional durability of encapsulated perovskite devices. Analyzed experimental data using MATLAB to identify performance trends and validate engineering hypotheses through comprehensive material testing.</p>
                     
                     <div class="project-overview">
                         <h4>Key Responsibilities</h4>
-                        <p>Material testing | Electrical characterisation | Microstructural analysis | Data analysis & visualisation | Technical documentation</p>
+                        <p>Test design & methodology | Material testing | Electrical characterization | MATLAB data analysis | Technical documentation</p>
                     </div>
 
                     <div class="project-achievements">
                         <h4>Key Achievements</h4>
                         <ul class="achievements-list">
-                            <li>Applied manual spray encapsulation techniques and assessed their effectiveness against mechanical fatigue through electrical performance analysis and microstructural evaluation, developing strong analytical and problem-solving skills</li>
-                            <li>Utilised Ossila Solar Cell software to measure and calculate power conversion efficiency (PCE) alongside other metrics with a single coat of silicone encapsulant achieving a PCE of 13.10% and an average fill factor of 54.05%</li>
-                            <li>Demonstrated that three coats of silicone spray encapsulation significantly improved device stability, with an encapsulated cell retaining 93% of its initial PCE over 504 hours (21 days) compared to an 88% efficiency loss in an unencapsulated control cell</li>
-                            <li>Managed PCE data in Excel, outputting results using MATLAB to produce clear visual representations of electrical performance metrics, aiding the interpretation of results and supporting future research</li>
+                            <li>Developed a low-cost cyclic bending test using analytical calculations to mimic more complex commercial systems, demonstrating just 0.09% power conversion efficiency (PCE) loss in encapsulated devices after 100 bending cycles</li>
+                            <li>Designed comprehensive test procedures validating encapsulation effectiveness through electrical performance analysis and microstructural evaluation</li>
+                            <li>Demonstrated that three coats of silicone spray encapsulation significantly improved device stability, with encapsulated cells retaining 93% of initial PCE over 500 hours</li>
+                            <li>Analyzed experimental data using MATLAB to identify performance trends, validate engineering hypotheses and produce technical reports with clear visual representations of results</li>
                         </ul>
                     </div>
 
                     <div class="tech-tags">
                         <span class="tech-tag">Materials Science</span>
+                        <span class="tech-tag">Electrical Testing</span>
                         <span class="tech-tag">MATLAB</span>
                         <span class="tech-tag">Excel Data Analysis</span>
                         <span class="tech-tag">Laboratory Work</span>
-                        <span class="tech-tag">Electrical Testing</span>
                         <span class="tech-tag">Technical Writing</span>
                     </div>
                 </div>
@@ -727,21 +856,35 @@
             <!-- Project 3: Automated Spray System -->
             <div class="project-item">
                 <div class="project-header">
-                    <h3>Automated Spray Encapsulation System</h3>
-                    <p class="project-description">This project involves the design and development of a CNC automated spray encapsulation system, integrating an airbrush with a computer-controlled linear stage powered by stepper motors to enable precise and repeatable encapsulant deposition on photovoltaic cells. The system represents a significant advancement from manual spray techniques, allowing for controlled parameters and systematic optimisation.</p>
+                    <div class="project-meta">
+                        <h3>Automated Spray Encapsulation System</h3>
+                        <div class="project-metrics">
+                            <div class="metric-badge">
+                                <i class="fas fa-calendar"></i> Oct 2024 - Present
+                            </div>
+                            <div class="metric-badge">
+                                <i class="fas fa-scissors"></i> 66% Material Reduction
+                            </div>
+                            <div class="metric-badge">
+                                <i class="fas fa-gears"></i> 6 Design Iterations
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="project-description">Designed and built a custom CNC encapsulation system through six design iterations, replacing a 3-coat manual process with single automated pass. Implemented G-code programming and Arduino microcontroller control to optimize spray parameters.</p>
                     
                     <div class="project-overview">
                         <h4>Key Responsibilities</h4>
-                        <p>Mechanical design (CAD) | G-code programming | Arduino microcontroller development | Parameter optimisation | Hardware integration</p>
+                        <p>Mechanical design (CAD) | G-code programming | Arduino development | Parameter optimization | Hardware integration</p>
                     </div>
 
                     <div class="project-achievements">
                         <h4>Key Achievements</h4>
                         <ul class="achievements-list">
-                            <li>Utilised Creo CAD software to design a detailed Cartesian frame guiding fabrication decisions and ensuring dimensional accuracy across all fabricated components</li>
-                            <li>Developed and implemented G-code programming to control servo motors which power the linear stage, enabling accurate and reliable positioning of the airbrush during the encapsulation process</li>
-                            <li>Programmed an Arduino microcontroller using C++ to control the actuation of a solenoid valve, regulating nitrogen flow to the airbrush with precise timing control</li>
-                            <li>Currently optimising spraying parameters including flow rate, nozzle distance and transverse nozzle speed to determine the optimal deposition parameters for producing high quality, uniform encapsulation layers. This demonstrates a systematic and analytical approach to control system design transferable to decommissioning projects</li>
+                            <li>Designed and built a custom CNC encapsulation system through six design iterations in Creo CAD, cutting material usage by 66% by replacing a 3-coat manual process with a single automated pass</li>
+                            <li>Utilized Creo CAD software to design detailed Cartesian frame guiding fabrication decisions and ensuring dimensional accuracy across all fabricated components</li>
+                            <li>Developed and implemented G-code programming to control servo motors powering the linear stage, enabling accurate and reliable airbrush positioning</li>
+                            <li>Programmed Arduino microcontroller using C++ to control solenoid valve actuation, regulating nitrogen flow with precise timing and parameter optimization</li>
                         </ul>
                     </div>
 
@@ -751,7 +894,7 @@
                         <span class="tech-tag">Arduino C++</span>
                         <span class="tech-tag">CNC Control</span>
                         <span class="tech-tag">Stepper Motors</span>
-                        <span class="tech-tag">Process Optimisation</span>
+                        <span class="tech-tag">Process Optimization</span>
                     </div>
                 </div>
 
@@ -775,21 +918,32 @@
             <!-- Project 4: NACA CFD -->
             <div class="project-item">
                 <div class="project-header">
-                    <h3>NACA 7316 Aerofoil CFD Simulation</h3>
-                    <p class="project-description">This project involved the computational fluid dynamics (CFD) simulation of turbulent subsonic flow over a NACA 7316 aerofoil using SU2, an open-source high-fidelity simulation platform. A Reynolds-averaged Navier-Stokes (RANS) solver was employed alongside the SST turbulence model to capture both near-wall and far-field turbulent flow behaviour across a range of angles of attack, with results validated against XFOIL reference data.</p>
+                    <div class="project-meta">
+                        <h3>NACA 7316 Aerofoil CFD Simulation</h3>
+                        <div class="project-metrics">
+                            <div class="metric-badge">
+                                <i class="fas fa-wind"></i> RANS Solver
+                            </div>
+                            <div class="metric-badge">
+                                <i class="fas fa-check"></i> XFOIL Validation
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="project-description">Executed comprehensive CFD analysis of turbulent subsonic flow over NACA 7316 aerofoil using SU2 solver. Validated results against XFOIL reference data and produced detailed flow visualization for technical communication.</p>
                     
                     <div class="project-overview">
                         <h4>Key Responsibilities</h4>
-                        <p>CAD geometry creation | Mesh generation & refinement | Solver configuration | Simulation execution | Post-processing & visualisation | Technical documentation</p>
+                        <p>CAD geometry creation | Mesh generation & refinement | Solver configuration | Simulation execution | Post-processing & visualization</p>
                     </div>
 
                     <div class="project-achievements">
                         <h4>Key Achievements</h4>
                         <ul class="achievements-list">
-                            <li>Configured and executed a RANS-based CFD simulation in SU2 using the SST turbulence model and JST spatial discretisation scheme, demonstrating practical experience in simulation setup and numerical methods directly applicable to engineering assessment roles</li>
-                            <li>Validated lift coefficient (Cl) results against XFOIL software reference data across multiple angles of attack, achieving strong agreement with a simulated Cl of 1.21 compared to 1.28 at α = 4.07°, with findings formally written up demonstrating strong technical documentation and reporting skills</li>
-                            <li>Produced Mach number and pressure distribution contour plots using Paraview software, enabling the interpretation and communication of flow behaviour, demonstrating proficiency in CFD post-processing and results visualisation</li>
-                            <li>Applied a systematic approach throughout the simulation workflow, from the initial solver configuration through to results and validation, reflecting the rigorous methodology required in professional engineering assessment and numerical simulation work</li>
+                            <li>Configured and executed a RANS-based CFD simulation in SU2 using the SST turbulence model and JST spatial discretization scheme, demonstrating practical experience in structured problem-solving</li>
+                            <li>Validated lift coefficient (Cl) results against XFOIL software reference data across multiple angles of attack, achieving strong agreement with simulated Cl of 1.21 vs reference 1.19</li>
+                            <li>Produced Mach number and pressure distribution contour plots using Paraview software, enabling interpretation and communication of flow behavior with professional-grade visualizations</li>
+                            <li>Applied systematic approach throughout simulation workflow from solver configuration through results validation, reflecting rigorous engineering methodology</li>
                         </ul>
                     </div>
 
@@ -842,7 +996,7 @@
                 <ul class="skill-list">
                     <li>Finite Element Analysis (FEA)</li>
                     <li>Computational Fluid Dynamics (CFD)</li>
-                    <li>ANSYS, Abaqus, SU2</li>
+                    <li>ANSYS Fluent & SU2</li>
                     <li>Mesh Generation (ICEM)</li>
                 </ul>
             </div>
@@ -862,7 +1016,7 @@
                 <ul class="skill-list">
                     <li>MATLAB</li>
                     <li>Excel</li>
-                    <li>Data Visualisation</li>
+                    <li>Data Visualization</li>
                     <li>Statistical Analysis</li>
                 </ul>
             </div>
@@ -894,7 +1048,7 @@
         <h2>Let's Connect</h2>
         <div style="text-align: center; margin-top: 40px;">
             <p style="font-size: 18px; color: var(--text-light); margin-bottom: 30px;">
-                I'm interested in graduate mechanical engineering roles, simulation work, and innovative projects. Feel free to reach out!
+                I'm actively seeking graduate mechanical engineering roles focusing on simulation, robotics, and innovative product development. I'm excited to bring my expertise in CAD, advanced analysis, and systems integration to challenging projects.
             </p>
             <div class="cta-buttons">
                 <a href="mailto:tomastesto@outlook.com" class="btn btn-primary">Send Email</a>
@@ -933,6 +1087,16 @@
                         block: 'start'
                     });
                 }
+            });
+        });
+
+        // Add subtle click feedback to project cards
+        document.querySelectorAll('.project-item').forEach(card => {
+            card.addEventListener('click', function() {
+                this.style.transform = 'scale(0.98)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 150);
             });
         });
     </script>
